@@ -3,9 +3,16 @@ using Microsoft.EntityFrameworkCore;
 using PharmacySystem.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
+
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(connectionString));;
+
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
 
 builder.Services.AddDbContext<PharmcySystemContext>(a => {
@@ -15,8 +22,8 @@ builder.Services.AddDbContext<PharmcySystemContext>(a => {
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<PharmcySystemContext>();
+//builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<PharmcySystemContext>();
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

@@ -8,85 +8,109 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PharmacySystem
 build_property.RootNamespace = PharmacySystem
-build_property.ProjectDir = H:\ITI\subjects\MVC\project\PharmacySystem\PharmacySystem\
+build_property.ProjectDir = C:\Users\Fady\Desktop\iti\projects\pharmacy system MVC\project\PharmacySystem\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = H:\ITI\subjects\MVC\project\PharmacySystem\PharmacySystem
+build_property.MSBuildProjectDirectory = C:\Users\Fady\Desktop\iti\projects\pharmacy system MVC\project\PharmacySystem
 build_property._RazorSourceGeneratorDebug = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Areas/Identity/Pages/Account/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Areas/Identity/Pages/Account/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Areas/Identity/Pages/Account/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Areas/Identity/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Home/Index.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Home/Privacy.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Invoices/Create.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Invoices/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52b2ljZXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Invoices/Delete.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Invoices/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52b2ljZXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Invoices/Details.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Invoices/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52b2ljZXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Invoices/Edit.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Invoices/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52b2ljZXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Invoices/Index.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Invoices/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSW52b2ljZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Items/Create.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Items/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Items/Delete.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Items/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Items/Details.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Items/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Items/Edit.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Items/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Items/Index.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Items/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSXRlbXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Shared/Error.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/_ViewImports.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/_ViewStart.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[H:/ITI/subjects/MVC/project/PharmacySystem/PharmacySystem/Views/Shared/_Layout.cshtml]
+[C:/Users/Fady/Desktop/iti/projects/pharmacy system MVC/project/PharmacySystem/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-ykhxejnh17

@@ -1,21 +1,28 @@
 {
   "format": 1,
   "restore": {
-    "H:\\ITI\\subjects\\MVC\\project\\PharmacySystem\\PharmacySystem\\PharmacySystem.csproj": {}
+    "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\PharmacySystem.csproj": {}
   },
   "projects": {
-    "H:\\ITI\\subjects\\MVC\\project\\PharmacySystem\\PharmacySystem\\PharmacySystem.csproj": {
+    "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\PharmacySystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\ITI\\subjects\\MVC\\project\\PharmacySystem\\PharmacySystem\\PharmacySystem.csproj",
+        "projectUniqueName": "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\PharmacySystem.csproj",
         "projectName": "PharmacySystem",
-        "projectPath": "H:\\ITI\\subjects\\MVC\\project\\PharmacySystem\\PharmacySystem\\PharmacySystem.csproj",
-        "packagesPath": "C:\\Users\\hager\\.nuget\\packages\\",
-        "outputPath": "H:\\ITI\\subjects\\MVC\\project\\PharmacySystem\\PharmacySystem\\obj\\",
+        "projectPath": "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\PharmacySystem.csproj",
+        "packagesPath": "C:\\Users\\Fady\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\hager\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\Fady\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -46,11 +53,11 @@
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.AspNetCore.Identity.UI": {
               "target": "Package",
-              "version": "[6.0.3, )"
+              "version": "[6.0.5, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -93,7 +100,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
