@@ -6,11 +6,19 @@ var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'ApplicationDbContextConnection' not found.");
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlServer(connectionString));;
+    options.UseSqlServer(connectionString));
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<IdentityUser>(
+    options => {
+        options.SignIn.RequireConfirmedAccount = false;
+        //options.Password.RequireNonAlphanumeric = false;
+        //options.Password.RequireUppercase = false;
+        //options.Password.RequireLowercase = false;
+        //options.Password.RequiredLength = 4;
+    })
+     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
-
+    
 // Add services to the container.
 //var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -50,7 +58,7 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=items}/{action=Index}/{id?}");
+    pattern: "{controller=home}/{action=Index}/{id?}");
 app.MapRazorPages();
 
 app.Run();
