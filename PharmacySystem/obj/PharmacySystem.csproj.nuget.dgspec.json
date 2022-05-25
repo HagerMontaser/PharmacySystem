@@ -1,28 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\PharmacySystem.csproj": {}
+    "F:\\iti\\22_MVC\\MVC project\\pharmcySys\\VS\\PharmacySystem\\PharmacySystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\PharmacySystem.csproj": {
+    "F:\\iti\\22_MVC\\MVC project\\pharmcySys\\VS\\PharmacySystem\\PharmacySystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\PharmacySystem.csproj",
+        "projectUniqueName": "F:\\iti\\22_MVC\\MVC project\\pharmcySys\\VS\\PharmacySystem\\PharmacySystem.csproj",
         "projectName": "PharmacySystem",
-        "projectPath": "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\PharmacySystem.csproj",
-        "packagesPath": "C:\\Users\\Fady\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Fady\\Desktop\\iti\\projects\\pharmacy system MVC\\project\\PharmacySystem\\obj\\",
+        "projectPath": "F:\\iti\\22_MVC\\MVC project\\pharmcySys\\VS\\PharmacySystem\\PharmacySystem.csproj",
+        "packagesPath": "C:\\Users\\20122\\.nuget\\packages\\",
+        "outputPath": "F:\\iti\\22_MVC\\MVC project\\pharmcySys\\VS\\PharmacySystem\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Fady\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\20122\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -100,7 +93,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
