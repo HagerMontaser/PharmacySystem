@@ -1,4 +1,4 @@
-﻿@model PharmacySystem.Models1.Invoice
+﻿@model PharmacySystem.Models.InvoicesItems
 
 @{
     ViewData["Title"] = "Create";
@@ -10,33 +10,63 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <form asp-action="Add">
+            <label  class="control-label">Quantity</label>
+            <input name="Quantity"  class="form-control" />
+            <label   class="control-label">Item</label>
+            <select asp-for="item.ID" class ="form-control" asp-items="ViewBag.Item_Name"></select>
+            <input  type="submit" value="Add" class="btn btn-primary" />
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if(ViewBag.Items != null)
+                 {
+                     foreach (var item in ViewBag.Items)
+                     {
+                         <tr>
+                             <td>@item.Name</td>
+                             <td>@item.Quantity</td>
+                             <td>@item.Price</td>
+                         </tr>
+                     }
+                 }
+
+             </tbody>
+        </table>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Date" class="control-label"></label>
-                <input asp-for="Date" class="form-control" />
-                <span asp-validation-for="Date" class="text-danger"></span>
+                <label asp-for="invoice.Date" class="control-label"></label>
+                <input asp-for="invoice.Date" class="form-control" />
+                <span asp-validation-for="invoice.Date" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CustName" class="control-label">Customer Name</label>
-                <input asp-for="CustName" class="form-control" />
-                <span asp-validation-for="CustName" class="text-danger"></span>
+                <label asp-for="invoice.CustName" class="control-label">Customer Name</label>
+                <input asp-for="invoice.CustName" class="form-control" />
+                <span asp-validation-for="invoice.CustName" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="TotalPrice" class="control-label">Total Price</label>
                 <input asp-for="TotalPrice" class="form-control" />
                 <span asp-validation-for="TotalPrice" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <label asp-for="Type" class="control-label"></label>
-                <select asp-for="Type" class="form-control">
+                <label asp-for="invoice.Type" class="control-label"></label>
+                <select asp-for="invoice.Type" class="form-control">
                     <option value="Sell">Sell</option>
                     <option value="Buy" >Buy</option>
                 </select>
             </div>
             <div class="form-group">
-                <label asp-for="Employee_Username" class="control-label">Employee Username</label>
-                <select asp-for="Employee_Username" class ="form-control" asp-items="ViewBag.Employee_Username"></select>
+                <label asp-for="invoice.Employee_Username" class="control-label">Employee Username</label>
+                <select asp-for="invoice.Employee_Username" class ="form-control" asp-items="ViewBag.Employee_Username"></select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />

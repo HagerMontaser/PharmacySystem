@@ -14,8 +14,8 @@ namespace PharmacySystem.Controllers
 {
     public class InvoicesController : Controller
     {
+        static List<Item> items = new List<Item>();
         private readonly PharmcySystemContext _context;
-
         public InvoicesController(PharmcySystemContext context)
         {
             _context = context;
@@ -54,6 +54,7 @@ namespace PharmacySystem.Controllers
         public IActionResult Create()
         {
             ViewData["Employee_Username"] = new SelectList(_context.AspNetUsers, "Id", "UserName");
+            ViewData["Item_Name"] = new SelectList(_context.Items, "ID", "Name");
             return View();
         }
 
@@ -63,16 +64,37 @@ namespace PharmacySystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Invoice_No,Date,CustName,TotalPrice,Type,Employee_Username")] Invoice invoice)
+        public async Task<IActionResult> Create(/*[Bind("Invoice_No,Date,CustName,TotalPrice,Type,Employee_Username")]*/ InvoicesItems invoices_items)
         {
-            if (ModelState.IsValid)
+            if (ModelState.Root.Children[1].ValidationState!=null)
             {
-                _context.Add(invoice);
+                invoices_items.invoice.TotalPrice = (double)0;
+                foreach(var item in items)
+                {
+                    invoices_items.invoice.TotalPrice += item.Price;
+                }
+                _context.Add(invoices_items.invoice);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Employee_Username"] = new SelectList(_context.AspNetUsers, "Id", "UserName", invoice.Employee_Username);
-            return View(invoice);
+            ViewData["Employee_Username"] = new SelectList(_context.AspNetUsers, "Id", "UserName", invoices_items.invoice.Employee_Username);
+            
+            return View(invoices_items.invoice);
+        }
+        [HttpPost]
+        public async Task<IActionResult> Add(string Quantity ,InvoicesItems invoices_items)
+        {
+            ViewData["Employee_Username"] = new SelectList(_context.AspNetUsers, "Id", "UserName");
+            ViewData["Item_Name"] = new SelectList(_context.Items, "ID", "Name" , invoices_items.item.ID);
+            Item currentItem =await _context.Items.Where(a=>a.ID == invoices_items.item.ID).FirstOrDefaultAsync<Item>();
+            double price = double.Parse(Quantity) * currentItem.Price;
+            Item item = new Item();
+            item.Name = currentItem.Name;
+            item.Price = price;
+            item.Quantity = Quantity;
+            items.Add(item);
+            ViewData["Items"] = items;
+            return View("Create");
         }
 
         [Authorize(Roles = "Admin")]

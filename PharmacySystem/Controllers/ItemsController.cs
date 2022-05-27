@@ -59,7 +59,7 @@ namespace PharmacySystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Quantity,Price,ImageData,ImageName")] Item item, IFormFile files)
+        public async Task<IActionResult> Create([Bind("ID,Name,Quantity,Price,ImageData,ImageName")] Item item, IFormFile? files)
         {
             if (ModelState.IsValid)
             {
@@ -79,6 +79,12 @@ namespace PharmacySystem.Controllers
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
 
+                }
+                else
+                {
+                    _context.Add(item);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
             }
             return View(item);
@@ -105,7 +111,7 @@ namespace PharmacySystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Quantity,Price,ImageData,ImageName")] Item item, IFormFile files)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Quantity,Price,ImageData,ImageName")] Item item, IFormFile? files)
         {
             if (id != item.ID)
             {
@@ -128,6 +134,11 @@ namespace PharmacySystem.Controllers
                             files.CopyTo(target);
                             item.ImageData = target.ToArray();
                         }
+                        _context.Update(item);
+                        await _context.SaveChangesAsync();
+                    }
+                    else
+                    {
                         _context.Update(item);
                         await _context.SaveChangesAsync();
                     }
