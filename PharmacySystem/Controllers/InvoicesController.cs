@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PharmacySystem.Data;
 using PharmacySystem.Models;
+using PharmacySystem.Models1;
 
 namespace PharmacySystem.Controllers
 {
@@ -19,6 +21,7 @@ namespace PharmacySystem.Controllers
             _context = context;
         }
 
+        [Authorize(Roles = "Admin,Employee")]
         // GET: Invoices
         public async Task<IActionResult> Index()
         {
@@ -26,6 +29,7 @@ namespace PharmacySystem.Controllers
             return View(await pharmcySystemContext.ToListAsync());
         }
 
+        [Authorize(Roles = "Admin,Employee")]
         // GET: Invoices/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -45,13 +49,15 @@ namespace PharmacySystem.Controllers
             return View(invoice);
         }
 
+        [Authorize(Roles = "Admin,Employee")]
         // GET: Invoices/Create
         public IActionResult Create()
         {
-            ViewData["Employee_Username"] = new SelectList(_context.Employees, "UserName", "UserName");
+            ViewData["Employee_Username"] = new SelectList(_context.AspNetUsers, "Id", "UserName");
             return View();
         }
 
+        [Authorize(Roles = "Admin,Employee")]
         // POST: Invoices/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -65,10 +71,11 @@ namespace PharmacySystem.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Employee_Username"] = new SelectList(_context.Employees, "UserName", "UserName", invoice.Employee_Username);
+            ViewData["Employee_Username"] = new SelectList(_context.AspNetUsers, "Id", "UserName", invoice.Employee_Username);
             return View(invoice);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Invoices/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -82,11 +89,12 @@ namespace PharmacySystem.Controllers
             {
                 return NotFound();
             }
-            ViewData["Type"]= invoice.Type;
-            ViewData["Employee_Username"] = new SelectList(_context.Employees, "UserName", "UserName", invoice.Employee_Username);
+            ViewData["Type"] = invoice.Type;
+            ViewData["Employee_Username"] = new SelectList(_context.AspNetUsers, "Id", "UserName", invoice.Employee_Username);
             return View(invoice);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Invoices/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -119,10 +127,11 @@ namespace PharmacySystem.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["Employee_Username"] = new SelectList(_context.Employees, "UserName", "UserName", invoice.Employee_Username);
+            ViewData["Employee_Username"] = new SelectList(_context.AspNetUsers, "Id", "UserName", invoice.Employee_Username);
             return View(invoice);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Invoices/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -142,6 +151,7 @@ namespace PharmacySystem.Controllers
             return View(invoice);
         }
 
+        [Authorize(Roles = "Admin")]
         // POST: Invoices/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
@@ -156,14 +166,14 @@ namespace PharmacySystem.Controllers
             {
                 _context.Invoices.Remove(invoice);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool InvoiceExists(int id)
         {
-          return (_context.Invoices?.Any(e => e.Invoice_No == id)).GetValueOrDefault();
+            return (_context.Invoices?.Any(e => e.Invoice_No == id)).GetValueOrDefault();
         }
     }
 }

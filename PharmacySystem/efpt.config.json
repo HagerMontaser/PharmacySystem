@@ -1,20 +1,20 @@
 ﻿{
    "CodeGenerationMode": 2,
-   "ContextClassName": "PharmcySystemContext",
+   "ContextClassName": "PharmcySystem1Context",
    "ContextNamespace": null,
    "DefaultDacpacSchema": null,
    "FilterSchemas": false,
    "IncludeConnectionString": true,
    "ModelNamespace": null,
-   "OutputContextPath": "Data",
-   "OutputPath": "Models",
+   "OutputContextPath": "Data1",
+   "OutputPath": "Models1",
    "ProjectRootNamespace": "PharmacySystem",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,
    "SelectedToBeGenerated": 0,
    "Tables": [
       {
-         "Name": "[dbo].[Employee]",
+         "Name": "[dbo].[AspNetUsers]",
          "ObjectType": 0
       },
       {
@@ -34,7 +34,7 @@
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": true,
    "UseDbContextSplitting": false,
-   "UseFluentApiOnly": true,
+   "UseFluentApiOnly": false,
    "UseHandleBars": false,
    "UseHierarchyId": false,
    "UseInflector": true,

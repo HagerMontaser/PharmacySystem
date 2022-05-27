@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using PharmacySystem.Models;
+using PharmacySystem.Models1;
 
 namespace PharmacySystem.Data
 {
@@ -19,7 +19,7 @@ namespace PharmacySystem.Data
         {
         }
 
-        public virtual DbSet<Employee> Employees { get; set; }
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; }
         public virtual DbSet<Invoice> Invoices { get; set; }
         public virtual DbSet<Item> Items { get; set; }
         public virtual DbSet<Item_Invoice> Item_Invoices { get; set; }
@@ -35,86 +35,38 @@ namespace PharmacySystem.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Employee>(entity =>
+            modelBuilder.Entity<AspNetUser>(entity =>
             {
-                entity.HasKey(e => e.UserName);
-
-                entity.ToTable("Employee");
-
-                entity.Property(e => e.UserName)
-                    .HasMaxLength(20)
-                    .IsFixedLength();
-
-                entity.Property(e => e.Name)
-                    .HasMaxLength(20)
-                    .IsFixedLength();
-
-                entity.Property(e => e.Password)
-                    .IsRequired()
-                    .HasMaxLength(50)
-                    .IsFixedLength();
-
-                entity.Property(e => e.Role)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength();
+                entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
+                    .IsUnique()
+                    .HasFilter("([NormalizedUserName] IS NOT NULL)");
             });
 
             modelBuilder.Entity<Invoice>(entity =>
             {
-                entity.HasKey(e => e.Invoice_No);
+                entity.Property(e => e.CustName).IsFixedLength();
 
-                entity.ToTable("Invoice");
-
-                entity.Property(e => e.CustName)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength();
-
-                entity.Property(e => e.Date).HasColumnType("date");
-
-                entity.Property(e => e.Employee_Username)
-                    .HasMaxLength(20)
-                    .IsFixedLength();
-
-                entity.Property(e => e.Type)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength();
+                entity.Property(e => e.Type).IsFixedLength();
 
                 entity.HasOne(d => d.Employee_UsernameNavigation)
                     .WithMany(p => p.Invoices)
                     .HasForeignKey(d => d.Employee_Username)
-                    .HasConstraintName("FK_Invoice_Employee");
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Invoice_AspNetUsers");
             });
 
             modelBuilder.Entity<Item>(entity =>
             {
-                entity.ToTable("Item");
+                entity.Property(e => e.ImageName).IsFixedLength();
 
-                entity.HasIndex(e => e.Name, "nameUnique")
-                    .IsUnique();
+                entity.Property(e => e.Name).IsFixedLength();
 
-                entity.Property(e => e.ImageName)
-                    .HasMaxLength(20)
-                    .IsFixedLength();
-
-                entity.Property(e => e.Name)
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .IsFixedLength();
-
-                entity.Property(e => e.Quantity)
-                    .IsRequired()
-                    .HasMaxLength(10)
-                    .IsFixedLength();
+                entity.Property(e => e.Quantity).IsFixedLength();
             });
 
             modelBuilder.Entity<Item_Invoice>(entity =>
             {
                 entity.HasKey(e => new { e.InvoiceID, e.ItemID });
-
-                entity.ToTable("Item_Invoice");
 
                 entity.HasOne(d => d.Invoice)
                     .WithMany(p => p.Item_Invoices)

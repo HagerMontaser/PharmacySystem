@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PharmacySystem.Data;
-using PharmacySystem.Models;
+using PharmacySystem.Models1;
 using System.Web;
+using Microsoft.AspNetCore.Authorization;
 
 namespace PharmacySystem.Controllers
 {
+    [Authorize(Roles = "Admin,Employee")]
     public class ItemsController : Controller
     {
         private readonly PharmcySystemContext _context;
@@ -23,9 +25,9 @@ namespace PharmacySystem.Controllers
         // GET: Items
         public async Task<IActionResult> Index()
         {
-              return _context.Items != null ? 
-                          View(await _context.Items.ToListAsync()) :
-                          Problem("Entity set 'PharmcySystemContext.Items'  is null.");
+            return _context.Items != null ?
+                        View(await _context.Items.ToListAsync()) :
+                        Problem("Entity set 'PharmcySystemContext.Items'  is null.");
         }
 
         // GET: Items/Details/5
@@ -57,15 +59,15 @@ namespace PharmacySystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Quantity,Price,ImageData,ImageName")] Item item , IFormFile files)
+        public async Task<IActionResult> Create([Bind("ID,Name,Quantity,Price,ImageData,ImageName")] Item item, IFormFile files)
         {
             if (ModelState.IsValid)
             {
-                if(files != null && files.Length>0)
+                if (files != null && files.Length > 0)
                 {
                     //Getting FileName
                     var fileName = Path.GetFileName(files.FileName);
-                    
+
                     item.ImageName = fileName;
 
                     using (var target = new MemoryStream())
@@ -103,7 +105,7 @@ namespace PharmacySystem.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Quantity,Price,ImageData,ImageName")] Item item , IFormFile files)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Quantity,Price,ImageData,ImageName")] Item item, IFormFile files)
         {
             if (id != item.ID)
             {
@@ -178,14 +180,14 @@ namespace PharmacySystem.Controllers
             {
                 _context.Items.Remove(item);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool ItemExists(int id)
         {
-          return (_context.Items?.Any(e => e.ID == id)).GetValueOrDefault();
+            return (_context.Items?.Any(e => e.ID == id)).GetValueOrDefault();
         }
     }
 }

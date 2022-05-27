@@ -2,9 +2,14 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace PharmacySystem.Models
+namespace PharmacySystem.Models1
 {
+    [Table("Item")]
+    [Index("Name", Name = "nameUnique", IsUnique = true)]
     public partial class Item
     {
         public Item()
@@ -12,13 +17,20 @@ namespace PharmacySystem.Models
             Item_Invoices = new HashSet<Item_Invoice>();
         }
 
+        [Key]
         public int ID { get; set; }
+        [Required]
+        [StringLength(100)]
         public string Name { get; set; }
+        [Required]
+        [StringLength(10)]
         public string Quantity { get; set; }
         public double Price { get; set; }
         public byte[] ImageData { get; set; }
+        [StringLength(20)]
         public string ImageName { get; set; }
 
+        [InverseProperty("Item")]
         public virtual ICollection<Item_Invoice> Item_Invoices { get; set; }
     }
 }

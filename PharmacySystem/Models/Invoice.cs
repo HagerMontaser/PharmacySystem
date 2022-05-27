@@ -2,9 +2,13 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace PharmacySystem.Models
+namespace PharmacySystem.Models1
 {
+    [Table("Invoice")]
     public partial class Invoice
     {
         public Invoice()
@@ -12,14 +16,25 @@ namespace PharmacySystem.Models
             Item_Invoices = new HashSet<Item_Invoice>();
         }
 
+        [Key]
         public int Invoice_No { get; set; }
+        [Column(TypeName = "date")]
         public DateTime Date { get; set; }
+        [Required]
+        [StringLength(10)]
         public string CustName { get; set; }
         public double? TotalPrice { get; set; }
+        [Required]
+        [StringLength(10)]
         public string Type { get; set; }
+        [Required]
+        [StringLength(450)]
         public string Employee_Username { get; set; }
 
-        public virtual Employee Employee_UsernameNavigation { get; set; }
+        [ForeignKey("Employee_Username")]
+        [InverseProperty("Invoices")]
+        public virtual AspNetUser Employee_UsernameNavigation { get; set; }
+        [InverseProperty("Invoice")]
         public virtual ICollection<Item_Invoice> Item_Invoices { get; set; }
     }
 }

@@ -2,16 +2,26 @@
 #nullable disable
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
-namespace PharmacySystem.Models
+namespace PharmacySystem.Models1
 {
+    [Table("Item_Invoice")]
     public partial class Item_Invoice
     {
+        [Key]
         public int InvoiceID { get; set; }
+        [Key]
         public int ItemID { get; set; }
         public int Quantity { get; set; }
 
+        [ForeignKey("InvoiceID")]
+        [InverseProperty("Item_Invoices")]
         public virtual Invoice Invoice { get; set; }
+        [ForeignKey("ItemID")]
+        [InverseProperty("Item_Invoices")]
         public virtual Item Item { get; set; }
     }
 }
