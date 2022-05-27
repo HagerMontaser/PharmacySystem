@@ -10068,19 +10068,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\20122\\.nuget\\packages\\": {}
+    "C:\\Users\\hager\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\iti\\22_MVC\\MVC project\\pharmcySys\\VS v2.0\\PharmacySystem\\PharmacySystem.csproj",
+      "projectUniqueName": "H:\\ITI\\subjects\\MVC\\project\\PharmacySystem\\PharmacySystem\\PharmacySystem.csproj",
       "projectName": "PharmacySystem",
-      "projectPath": "F:\\iti\\22_MVC\\MVC project\\pharmcySys\\VS v2.0\\PharmacySystem\\PharmacySystem.csproj",
-      "packagesPath": "C:\\Users\\20122\\.nuget\\packages\\",
-      "outputPath": "F:\\iti\\22_MVC\\MVC project\\pharmcySys\\VS v2.0\\PharmacySystem\\obj\\",
+      "projectPath": "H:\\ITI\\subjects\\MVC\\project\\PharmacySystem\\PharmacySystem\\PharmacySystem.csproj",
+      "packagesPath": "C:\\Users\\hager\\.nuget\\packages\\",
+      "outputPath": "H:\\ITI\\subjects\\MVC\\project\\PharmacySystem\\PharmacySystem\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\20122\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hager\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

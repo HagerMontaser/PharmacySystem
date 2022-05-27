@@ -41,8 +41,8 @@ body {font-size:16px;}
         {
                 <a  asp-area="Identity" asp-page="/Account/Register" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Add new Employee </a>
         }
-        <a   asp-area="Identity" asp-page="/items" title="Manage" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Items </a>
-        <a  asp-area="Identity" asp-page="/invoices" title="Manage" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Invoices </a>
+        <a  asp-area="" asp-controller="Items" asp-action="Index" title="Manage" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Items </a>
+        <a  asp-area="" asp-controller="Invoices" asp-action="Index" title="Manage" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white"> Invoices </a>
         <a   asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Hello @User.Identity?.Name!</a>
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
             <button  type="submit" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white btn btn-link"  >Logout</button>

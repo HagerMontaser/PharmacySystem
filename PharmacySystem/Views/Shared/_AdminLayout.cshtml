@@ -19,7 +19,7 @@
            @*
             <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Add new Employee </a>*@
         }
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/items" title="Manage"> Items </a>
+        <a  class="nav-link text-dark" asp-area="" asp-controller="Items" asp-action="Index" title="Manage"> Items </a>
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/invoices" title="Manage"> Invoices </a>
         <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity?.Name!</a>
         <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
